@@ -1,0 +1,213 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10px;
+}
+
+body {
+    margin: 1rem 10rem;
+    background-color: #EEE;
+    color: #003B8E;
+}
+
+h1 {
+    color: #002E6D;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+.logo {
+    width: 10rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+}
+
+.inputSections {
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 1rem;
+}
+
+.textArea {
+    position:relative;
+    margin: 1rem 2rem;
+}
+
+.checkboxArea {
+    margin: 1rem 2rem;
+}
+
+.tLabel {
+    padding: 1rem;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 1em;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.text {
+    border: .1rem solid #003B8E;
+    background: transparent;
+    border-radius: .5rem;
+    width: 23rem;
+    height: 2rem;
+    padding: 0 2rem;
+    outline: none;
+}
+
+.text:focus~label,
+.text:valid~label {
+    top: -25%;
+    font-size: 1rem;
+}
+
+.hiden {
+    display: none;
+}
+
+.texto {
+    font-size: 1.3rem;
+}
+
+
+@keyframes animaTexto {
+    0% {
+        width: 0;
+    }
+}
+
+@media (max-width: 1220px) {
+
+body {
+    margin: 1rem 2rem;
+    background-color: #EEE;
+    color: #003B8E;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: .9rem;
+}
+
+.texto {
+    font-size: 1rem;
+}
+
+.textArea {
+    margin: 1rem .5rem;
+}
+
+.tLabel {
+    font-size: .9rem;
+}
+
+.logo {
+    width: 10rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+}
+
+.funcaoArea {
+    margin: 0;
+}
+
+.text  {
+    width: 19rem;
+}
+
+.text:focus~label,
+.text:valid~label {
+    top: -25%;
+    font-size: .8rem;
+}
+
+}
+
+@media (max-width: 779px) {
+
+.sectionLogo {
+    text-align: center;
+
+}
+
+.funcaoArea {
+    display: grid;
+}
+
+.inputSections {
+    align-items: center;
+    text-align: center;
+}
+
+.text  {
+    width: 90%;
+}
+
+.tLabel {
+    left: 3em;
+}
+
+}
+
+@media (max-width: 473px) {
+
+body {
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: .8rem;
+}
+
+.texto {
+    font-size: .9rem;
+}
+
+label {
+    font-size: .8rem;
+}
+
+.tLabel {
+    left: 0.2rem;
+    font-size: .8rem;
+}
+
+
+.text  {
+    width: 100%;
+}
+
+.text:focus~label,
+.text:valid~label {
+    top: -20%;
+    font-size: .7rem;
+}
+
+}
