@@ -3,13 +3,13 @@ function appResultado() {
     const tensaoV = Number(tensao.value);
 
     const potencia = document.getElementById("potencia");
-    const potenciaV = Number(potencia.value;)
+    const potenciaV = Number(potencia.value);
 
     const distancia = document.getElementById("distancia");
-    const distanciaV = Number(distancia.value;)
+    const distanciaV = Number(distancia.value);
 
     const queda = document.getElementById("queda")
-    const quedaV = Number(queda.value;)
+    const quedaV = Number(queda.value);
 
     const quedatensao = tensaoV*(quedaV/100);
 
