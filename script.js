@@ -1,6 +1,6 @@
 function appResultado() {
     const tensao = document.getElementById("tensao");
-    const tensaoV = tensao.value;
+    const tensaoV = Number(tensao.value);
 
     const potencia = document.getElementById("potencia");
     const potenciaV = potencia.value;
@@ -40,6 +40,11 @@ function appResultado() {
       valorC = radio.value;
     }
   });
+
+  if (!Number.isFinite(tensaoV) || tensaoV <=0){
+      alert("Informe uma tensão válida");
+      return;
+  }
 
   if (valorC == 1) {
     let corrente  = potenciaV/tensaoV
