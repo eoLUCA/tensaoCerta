@@ -56,8 +56,13 @@ function appResultado() {
       return;
   }
 
-  if (!Number.isFinite(quedaV) || quedaV <=0){
+  if (!Number.isFinite(quedaV) || quedaV >=100){
       alert("Informe uma queda de tensão válida");
+      return;
+  }
+
+  if (valorM === null || valorC === null) {
+      alert("Selecione o material ou o tipo de circuito");
       return;
   }
 
