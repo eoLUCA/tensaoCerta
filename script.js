@@ -18,9 +18,7 @@ function appResultado() {
 
     const hiden1 = document.querySelector('h1');
     const hiden2 = document.querySelector('h3');
-
-    hiden1.classList.add("hiden");
-    hiden2.classList.add("hiden");
+    
 
     const tituloResultado = document.getElementById("tituloResultado");
     const textoResultado = document.getElementById("textoResultado")
@@ -56,7 +54,7 @@ function appResultado() {
       return;
   }
 
-  if (!Number.isFinite(quedaV) || quedaV >=100){
+  if (!Number.isFinite(quedaV) || quedaV >=100 || quedaV <=100){
       alert("Informe uma queda de tensão válida");
       return;
   }
@@ -80,6 +78,9 @@ function appResultado() {
   } else {
     alert("Por Favor Informar Todas as Informaçoes Nescessarias")
   }
+
+    hiden1.classList.add("hiden");
+    hiden2.classList.add("hiden");
   
   
 
