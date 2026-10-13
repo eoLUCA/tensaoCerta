@@ -22,6 +22,11 @@ function appResultado() {
 
     const tituloResultado = document.getElementById("tituloResultado");
     const textoResultado = document.getElementById("textoResultado")
+
+    const secoesComerciais = [
+        1.5 , 2.5 , 4 , 6 , 10 , 16 ,
+        25 , 35 , 50 , 70 , 95 , 120
+    ];
     
 
     condutor.forEach((radio) => {
@@ -67,14 +72,16 @@ function appResultado() {
   if (valorC == 1) {
     let corrente  = potenciaV/tensaoV
     let secao = (2*distanciaV*corrente)/(valorM*quedatensao)
+    let secaoComercial = secoesComerciais.find(numero => numero >= secao)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
-    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> Bitola mínima recomendada: ≅"+secao.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
+    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> Bitola mínima recomendada: "+secaoComercial.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
   } else if (valorC == 2) {
     let corrente = potenciaV/(Math.sqrt(3)*tensaoV)
     let secao = (Math.sqrt(3)*distanciaV*corrente)/(valorM*quedatensao)
+    let secaoComercial = secoesComerciais.find(numero => numero >= secao)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
-    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> Bitola mínima recomendada: ≅"+secao.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
+    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> Bitola mínima recomendada: "+secaoComercial.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
   } else {
     alert("Por Favor Informar Todas as Informaçoes Nescessarias")
   }
