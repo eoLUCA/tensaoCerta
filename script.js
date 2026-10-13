@@ -3,13 +3,13 @@ function appResultado() {
     const tensaoV = Number(tensao.value);
 
     const potencia = document.getElementById("potencia");
-    const potenciaV = potencia.value;
+    const potenciaV = Number(potencia.value;)
 
     const distancia = document.getElementById("distancia");
-    const distanciaV = distancia.value;
+    const distanciaV = Number(distancia.value;)
 
     const queda = document.getElementById("queda")
-    const quedaV = queda.value;
+    const quedaV = Number(queda.value;)
 
     const quedatensao = tensaoV*(quedaV/100);
 
@@ -43,6 +43,21 @@ function appResultado() {
 
   if (!Number.isFinite(tensaoV) || tensaoV <=0){
       alert("Informe uma tensão válida");
+      return;
+  }
+
+  if (!Number.isFinite(potenciaV) || potenciaV <=0){
+      alert("Informe uma potência válida");
+      return;
+  }
+
+  if (!Number.isFinite(distanciaV) || distanciaV <=0){
+      alert("Informe uma distancia válida");
+      return;
+  }
+
+  if (!Number.isFinite(quedaV) || quedaV <=0){
+      alert("Informe uma queda de tensão válida");
       return;
   }
 
