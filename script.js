@@ -59,7 +59,7 @@ function appResultado() {
       return;
   }
 
-  if (!Number.isFinite(quedaV) || quedaV >=100 || quedaV <=100){
+  if (!Number.isFinite(quedaV) || quedaV >=100 || quedaV <=0){
       alert("Informe uma queda de tensão válida");
       return;
   }
