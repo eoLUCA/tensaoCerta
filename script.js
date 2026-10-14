@@ -68,8 +68,7 @@ function appResultado() {
       alert("Selecione o material ou o tipo de circuito");
       return;
   }
-    hiden1.classList.add("hiden");
-    hiden2.classList.add("hiden");
+    
 
   if (valorC == 1) {
     let corrente  = potenciaV/tensaoV
@@ -81,7 +80,9 @@ function appResultado() {
   }
     let quedaEstimada = (2*distanciaV*corrente)/(valorM*secaoComercial)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
-    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br>  A queda de tensao estimada é:" +quedaEstimada.toFixed(1)+ " V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> A seção calculada foi "+secao.toFixed(1)+ "</br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
+    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br>  A queda de tensao estimada é:" +quedaEstimada.toFixed(1)+ " V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> A seção calculada foi "+secao.toFixed(1)+ "</br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(1)+"mm² </br></br> Os resultados são estimativas baseadas em cálculos simplificados de queda de tensão. A seção comercial apresentada não subistitui o dimensionamento completo dos condutores conforme a NBR 5410." ;
+    hiden1.classList.add("hiden");
+    hiden2.classList.add("hiden");  
   } else if (valorC == 2) {
     let corrente = potenciaV/(Math.sqrt(3)*tensaoV)
     let secao = (Math.sqrt(3)*distanciaV*corrente)/(valorM*quedatensao)
@@ -92,7 +93,9 @@ function appResultado() {
   }
     let quedaEstimada = (Math.sqrt(3)*distanciaV*corrente)/(valorM*secaoComercial)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
-    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br> A queda de tensao estimada é:" +quedaEstimada.toFixed(1)+ " V </br>Corrente elétrica: "+ corrente.toFixed(2) +"A </br> A seção calculada foi "+secao.toFixed(1)+ "</br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
+    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br> A queda de tensao estimada é:" +quedaEstimada.toFixed(1)+ " V </br>Corrente elétrica: "+ corrente.toFixed(2) +"A </br> A seção calculada foi "+secao.toFixed(1)+ "</br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(1)+"mm² </br></br>Os resultados são estimativas baseadas em cálculos simplificados de queda de tensão. A seção comercial apresentada não subistitui o dimensionamento completo dos condutores conforme a NBR 5410." ;
+    hiden1.classList.add("hiden");
+    hiden2.classList.add("hiden"); 
   } else {
     alert("Por Favor Informar Todas as Informaçoes Nescessarias")
   }
