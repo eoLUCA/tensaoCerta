@@ -90,7 +90,7 @@ function appResultado() {
       alert ("Nenhuma seção comercial disponivel para esse cálculo");
       return;
   }
-    let quedaEstimada = (Math.sqrt(3)distanciaV*corrente)/(valorM*secaoComercial)
+    let quedaEstimada = (Math.sqrt(3)*distanciaV*corrente)/(valorM*secaoComercial)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
     textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> A seção colculada foi "+secao.toFixed(1)+ "</br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(0)+"mm²  A queda de tensao estimada é:" +quedaEstimada.toFixed(1)+ "  </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
   } else {
