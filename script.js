@@ -73,22 +73,28 @@ function appResultado() {
     let corrente  = potenciaV/tensaoV
     let secao = (2*distanciaV*corrente)/(valorM*quedatensao)
     let secaoComercial = secoesComerciais.find(numero => numero >= secao)
+    if (secaoComercial === undefined) {
+      alert ("Nenhuma seção comercial disponivel para esse cálculo");
+      return;
+  }
+    let quedaEstimada = (2*distanciaV*corrente)/(valorM*secaoComercial)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
-    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
+    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao.toFixed(2) + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> A seção colculada foi "+secao.toFixed(1)+ "</br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(0)+"mm² </br> A queda de tensao estimada é:" +quedaEstimada.toFixed(1)+ "</br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
   } else if (valorC == 2) {
     let corrente = potenciaV/(Math.sqrt(3)*tensaoV)
     let secao = (Math.sqrt(3)*distanciaV*corrente)/(valorM*quedatensao)
     let secaoComercial = secoesComerciais.find(numero => numero >= secao)
+    if (secaoComercial === undefined) {
+      alert ("Nenhuma seção comercial disponivel para esse cálculo");
+      return;
+  }
+    let quedaEstimada = (Math.sqrt(3)distanciaV*corrente)/(valorM*secaoComercial)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
-    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(1)+"mm² </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
+    textoResultado.innerHTML = "Queda de tensão máxima permitida: "+ quedatensao + "V </br> Corrente elétrica: "+ corrente.toFixed(2) +"A </br> A seção colculada foi "+secao.toFixed(1)+ "</br> Seção comercial pelo criterio de queda de tenção: "+secaoComercial.toFixed(0)+"mm²  A queda de tensao estimada é:" +quedaEstimada.toFixed(1)+ "  </br></br> Esses valores são baseados nos dados fornecidos e seguem o limite de queda de tensão permitido." ;
   } else {
     alert("Por Favor Informar Todas as Informaçoes Nescessarias")
   }
 
-  if (secaoComercial === undefined) {
-      alert ("Nenhuma seção comercial disponivel para esse cálculo");
-      return;
-  }
 
     hiden1.classList.add("hiden");
     hiden2.classList.add("hiden");
