@@ -68,6 +68,8 @@ function appResultado() {
       alert("Selecione o material ou o tipo de circuito");
       return;
   }
+    hiden1.classList.add("hiden");
+    hiden2.classList.add("hiden");
 
   if (valorC == 1) {
     let corrente  = potenciaV/tensaoV
@@ -76,8 +78,6 @@ function appResultado() {
     if (secaoComercial === undefined) {
       alert ("Nenhuma seção comercial disponivel para esse cálculo");
       return;
-    hiden1.classList.add("hiden");
-    hiden2.classList.add("hiden");
   }
     let quedaEstimada = (2*distanciaV*corrente)/(valorM*secaoComercial)
     tituloResultado.innerHTML = "Aqui estão os resultados do seu cálculo de queda de tensão:"
